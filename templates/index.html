@@ -9,12 +9,46 @@
     <div class="user-icon">👤</div>
     <div class="header">CHATBOOK</div>
     <div id="chat-box">
-      <div class="message user">Olá!</div>
-      <div class="message bot">Olá! Como vai você?</div>
+      <div class="message bot">{{ msg_boas_vindas }}</div>
     </div>
     <form class="chat-input" action="/send" method="POST">
       <input type="text" name="message" placeholder="Digite sua mensagem..." required>
       <button type="submit">📨</button>
     </form>
   </div>
+
+  <script>
+    const form = document.querySelector("form.chat-input");
+    const input = form.querySelector("input[name='message']");
+    const chatBox = document.getElementById("chat-box");
+  
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const userMessage = input.value.trim();
+      if (!userMessage) return;
+  
+      addMessage("user", userMessage);
+  
+      input.value = "";
+  
+      const response = await fetch("/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
+      });
+  
+      const data = await response.json();
+      const botReply = data.response;
+  
+      addMessage("bot", botReply);
+    });
+  
+    function addMessage(sender, message) {
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add("message", sender);
+      msgDiv.textContent = message;
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>  
 {% endblock %}
