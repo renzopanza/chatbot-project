@@ -2,19 +2,44 @@
 
 {% block content %}
   <div class="sidebar">
-    <div class="menu-icon">≡</div>
-    <div class="add-chat-icon">💬+</div>
-  </div>
-  <div class="chat-container">
-    <div class="user-icon">👤</div>
-    <div class="header">CHATBOOK</div>
-    <div id="chat-box">
-      <div class="message user">Olá!</div>
-      <div class="message bot">Olá! Como vai você?</div>
+
+    <div class="robot-icon">
+      <img src="{{ url_for('static', filename='images/robot-icon.png') }}" alt="Robô">
     </div>
-    <form class="chat-input" action="/send" method="POST">
+
+    <div class="clear-chat-button">
+      <a href="{{ url_for('resetar') }}">Clear Chat</a>
+    </div>
+  </div>
+
+  <div class="chat-container">
+    <div class="header">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo ChatBot" class="logo-image">
+    </div>
+    
+    
+    <div id="chat-box">
+      {% if historico %}
+        {% for msg in historico %}
+          {% if msg.user %}
+            <div class="message user">{{ msg.user }}</div>
+          {% endif %}
+          <div class="message bot">{{ msg.bot }}</div>
+        {% endfor %}
+      {% else %}
+        <div class="message bot">Olá! Como posso te ajudar hoje?</div>
+      {% endif %}
+    </div>
+    <form class="chat-input" action="/" method="POST">
       <input type="text" name="message" placeholder="Digite sua mensagem..." required>
-      <button type="submit">📨</button>
+      <button type="submit">
+        <img src="{{ url_for('static', filename='images/send-icon.png') }}" alt="Enviar" class="send-icon">
+      </button>      
     </form>
   </div>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    chatBox.scrollTop = chatBox.scrollHeight;
+  </script>
 {% endblock %}
