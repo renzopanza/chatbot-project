@@ -30,13 +30,15 @@
         <div class="message bot">Olá! Como posso te ajudar hoje?</div>
       {% endif %}
     </div>
-    <form class="chat-input" action="/" method="POST">
-      <input type="text" name="message" placeholder="Digite sua mensagem..." required>
-      <button type="submit">
-        <img src="{{ url_for('static', filename='images/send-icon.png') }}" alt="Enviar" class="send-icon">
-      </button>      
-    </form>
+
   </div>
+
+  <form class="chat-input" action="/" method="POST">
+    <input type="text" name="message" placeholder="Digite sua mensagem..." required>
+    <button type="submit">
+      <img src="{{ url_for('static', filename='images/send-icon.png') }}" alt="Enviar" class="send-icon">
+    </button>      
+  </form>
 
   <script>
     const chatBox = document.getElementById('chat-box');

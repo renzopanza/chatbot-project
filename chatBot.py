@@ -10,25 +10,25 @@ respostas_chatBot = {
     "romance": "Recomendo 'Orgulho e Preconceito' se você gosta de romance.",
     "terror": "Ah, livros de terror? 'O Iluminado' é um clássico assustador!",
     "aventura": "Para aventuras épicas, indico 'As Crônicas de Nárnia'.",
-    "ficção": "Ficção científica? Que tal 'Duna'?",
+    # "ficção": "Ficção científica? Que tal 'Duna'?",
 }
 
 pares = pares_lista
 
-reflections = {
-    "eu": "você",
-    "meu": "seu",
-    "meus": "seus",
-    "sou": "é",
-    "estou": "está",
-    "fui": "foi",
-    "era": "foi",
-    "você": "eu",
-    "você é": "eu sou",
-    "você está": "eu estou",
-}
+# reflections = {
+#     "eu": "você",
+#     "meu": "seu",
+#     "meus": "seus",
+#     "sou": "é",
+#     "estou": "está",
+#     "fui": "foi",
+#     "era": "foi",
+#     "você": "eu",
+#     "você é": "eu sou",
+#     "você está": "eu estou",
+# }
 
-chatbot = Chat(pares, reflections)
+chatbot = Chat(pares)
 
 def gerar_resposta(usuario_input):
     tokens_usuario = word_tokenize(usuario_input.lower())

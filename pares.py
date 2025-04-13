@@ -75,7 +75,7 @@ pares_lista = [
                 ],
 
         [
-        r"(.*)contato com extraterrestres?(.*)",
+        r"(.*)contato com extraterrestres?(.*)|(.*)extraterrestres?(.*)",
         ["Contatos com extraterrestres são cheios de mistério e possibilidades! Você prefere quando os aliens são hostis ou quando são seres enigmáticos que vêm em paz?",
         "Esse tema sempre dá margem pra teorias incríveis! Você curte mais histórias quando os aliens são hostis ou quando são seres enigmáticos que vêm em paz?"]
         ],
@@ -142,7 +142,7 @@ pares_lista = [
                     ["Simbolismos que só se revelam no final deixam a gente pensando por dias! Qual outro gênero você gosta?"]
                     ],  
         [
-        r"(.*)futuro dist[oó]pico(.*)|(.*)distopia",
+        r"(.*)futuros? dist[oó]picos?(.*)|(.*)distopias?",
         ["Futuros distópicos mostram o lado sombrio da humanidade. Você prefere tramas com governos totalitários ou com sociedades colapsadas tentando sobreviver?",
         "Distopias nos fazem refletir sobre o presente. Você gosta mais de histórias com governos totalitários ou com sociedades colapsadas tentando sobreviver?"]
         ],
