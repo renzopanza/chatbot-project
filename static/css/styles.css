@@ -92,11 +92,11 @@ body {
   align-items: center;
   background: transparent;
   z-index: 100;
-  padding-left: 350px;
+  padding-left: 190px;
 }
 
 .chat-input input {
-  width: 50%;
+  width: 70%;
   padding: 20px 30px;
   border-radius: 25px;
   border: none;
