@@ -34,7 +34,7 @@
   </div>
 
   <form class="chat-input" action="/" method="POST">
-    <input type="text" name="message" placeholder="Digite sua mensagem..." required>
+    <input type="text" id="message-input" name="message" placeholder="Digite sua mensagem..." required>
     <button type="submit">
       <img src="{{ url_for('static', filename='images/send-icon.png') }}" alt="Enviar" class="send-icon">
     </button>      
@@ -43,5 +43,13 @@
   <script>
     const chatBox = document.getElementById('chat-box');
     chatBox.scrollTop = chatBox.scrollHeight;
+    const input = document.getElementById('message-input');
+    input.focus();
+    document.querySelector('.chat-input').addEventListener('submit', function () {
+      setTimeout(() => {
+        input.focus();
+      }, 50);
+    });
+
   </script>
 {% endblock %}
