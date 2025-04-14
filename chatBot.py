@@ -6,10 +6,12 @@ from pares import pares_lista
 
 # Dicionário para respostas personalizadas com tokens (você pode preencher com palavras-chave depois)
 respostas_chatBot = {
-    "ação": "Temos ótimos livros de ação como 'Missão Impossível'.",
-    "romance": "Recomendo 'Orgulho e Preconceito' se você gosta de romance.",
-    "terror": "Ah, livros de terror? 'O Iluminado' é um clássico assustador!",
-    "aventura": "Para aventuras épicas, indico 'As Crônicas de Nárnia'.",
+    # "oi": "TESTE",
+    # "quero" : "Ótimo! Qual gênero você quer?"
+    # "ação": "Temos ótimos livros de ação como 'Missão Impossível'.",
+    # "romance": "Recomendo 'Orgulho e Preconceito' se você gosta de romance.",
+    # "terror": "Ah, livros de terror? 'O Iluminado' é um clássico assustador!",
+    # "aventura": "Para aventuras épicas, indico 'As Crônicas de Nárnia'.",
     # "ficção": "Ficção científica? Que tal 'Duna'?",
 }
 
