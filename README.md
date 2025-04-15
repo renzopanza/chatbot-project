@@ -13,3 +13,5 @@ Documentação para rodar o porjeto Chat Bot:
 6 - com o venv ativo, no mesmo terminal, rode o comando "python -m nltk.downloader all".
 
 7 - Após a instalação do NLTK, rode o comando "pip install flask".
+
+8 - Após completar estes passos, ainda no terminal dentro do venv, rode o comando python .\app.py
