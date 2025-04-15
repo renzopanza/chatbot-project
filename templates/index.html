@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="sidebar">
+
+    <div class="robot-icon">
+      <img src="{{ url_for('static', filename='images/robot-icon.png') }}" alt="Robô">
+    </div>
+
+    <div class="clear-chat-button">
+      <a href="{{ url_for('resetar') }}">Clear Chat</a>
+    </div>
+  </div>
+
+  <div class="chat-container">
+    <div class="header">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo ChatBot" class="logo-image">
+    </div>
+    
+    
+    <div id="chat-box">
+      {% if historico %}
+        {% for msg in historico %}
+          {% if msg.user %}
+            <div class="message user">{{ msg.user }}</div>
+          {% endif %}
+          <div class="message bot">{{ msg.bot }}</div>
+        {% endfor %}
+      {% else %}
+        <div class="message bot">Olá! Como posso te ajudar hoje?</div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <form class="chat-input" action="/" method="POST">
+    <input type="text" id="message-input" name="message" placeholder="Digite sua mensagem..." required>
+    <button type="submit">
+      <img src="{{ url_for('static', filename='images/send-icon.png') }}" alt="Enviar" class="send-icon">
+    </button>      
+  </form>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    chatBox.scrollTop = chatBox.scrollHeight;
+    const input = document.getElementById('message-input');
+    input.focus();
+    document.querySelector('.chat-input').addEventListener('submit', function () {
+      setTimeout(() => {
+        input.focus();
+      }, 50);
+    });
+
+  </script>
+{% endblock %}
