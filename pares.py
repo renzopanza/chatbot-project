@@ -13,6 +13,13 @@ pares_lista = [
         ]
     ],
     [
+        r"(.*)quem [eé] voc[eê](.*)",
+        [
+            "Prazer, sou ChatBook, uma IA que te ajuda a encontrar bons livros... Ou talvez eu só te enrole ( ͡❛ ͜ʖ ͡❛). Mas vamos lá, me diga, qual gênero você mais gosta?"
+
+        ]
+    ],
+        [
         r"(.*)recomend[ae]*g[eê]nero(.*)",
         [
             "Adoro ajudar a encontrar o gênero perfeito! Você prefere histórias que te transportam para mundos fantásticos ou que exploram mistérios da vida real?",
@@ -106,12 +113,12 @@ pares_lista = [
             "Investigações são perfeitas para mentes curiosas! Eu diria Suspense ou Policial. Suspense te prende com reviravoltas, e Policial foca em desvendar crimes. Qual você escolhe?"
         ]
     ],
-    [
-        r"(.*)a[çc][aã]o que n[aã]o para(.*)|(.*)a[çc][aã]o(.*)",
-        [
-            "Você curte um ritmo acelerado! Aventura ou Thriller podem ser ideais. Aventura tem exploração e coragem, enquanto Thriller é pura tensão. Qual você prefere?"
-        ]
-    ],
+    # [
+    #     r"(.*)a[çc][aã]o que n[aã]o para(.*)|(.*)a[çc][aã]o(.*)",
+    #     [
+    #         "Você curte um ritmo acelerado! Aventura ou Thriller podem ser ideais. Aventura tem exploração e coragem, enquanto Thriller é pura tensão. Qual você prefere?"
+    #     ]
+    # ],
     [
         r"(.*)suspense que te deixa tenso(.*)|(.*)tenso(.*)",
         [
@@ -193,13 +200,13 @@ pares_lista = [
 
 
     [
-        r"(.*)me recomenda um livro(.*)|(.*)recomenda um livro(.*)|(.*)recomende*livros?(.*)",
+        r"(.*)me recomenda um livro(.*)|(.*)recomenda um livro(.*)|(.*)recomende*livros?(.*)|(.*)fal[ea]*livros?(.*)|(.*)me diga*livros(.*)|(.*)algum livro(.*)",
         [
             "Claro! Mas antes preciso saber qual gênero literário você mais gosta. Qual é? "
         ]
     ],
     [
-        r"(.*)dica de livros?(.*)|(.*)indica.*livro(.*)|(.*)me indica.*livro(.*)|(.*)quero*livros?(.*)",
+        r"(.*)dicas? de livros?(.*)|(.*)indica*livro(.*)|(.*)me indica*livro(.*)|(.*)quero*livros?(.*)|(.*)indique*livros?(.*)",
         [
             "Com certeza! Qual gênero você costuma gostar mais?",
             "Claro! Você prefere Romance, Suspense ou Ação? Se não gostar desses qual outro você gosta?"
@@ -310,7 +317,7 @@ pares_lista = [
                     ["Colapsos temporais deixam tudo à beira do caos! Uma escolha intensa. Qual outro gênero você gosta?"]
                     ],
                 [
-                r"(.*)realidades alternativas(.*)",
+                r"(.*)realidades alternativas(.*)|(.*)muda eventos(.*)",
                 ["Realidades alternativas abrem infinitas possibilidades! Você prefere histórias em que o personagem tenta voltar à linha original ou quando aceita viver nessa nova realidade?",
                 "Essas bifurcações de tempo são fascinantes. Você curte mais histórias em que o personagem tenta voltar à linha original ou quando aceita viver nessa nova realidade?"]
                 ],
@@ -422,7 +429,7 @@ pares_lista = [
                     ["Simbolismos que só se revelam no final deixam a gente pensando por dias! Qual outro gênero você gosta?"]
                     ],  
         [
-        r"(.*)futuro dist[oó]pico(.*)|(.*)distopia",
+        r"(.*)futuros? dist[oó]picos?(.*)|(.*)distopia",
         ["Futuros distópicos mostram o lado sombrio da humanidade. Você prefere tramas com governos totalitários ou com sociedades colapsadas tentando sobreviver?",
         "Distopias nos fazem refletir sobre o presente. Você gosta mais de histórias com governos totalitários ou com sociedades colapsadas tentando sobreviver?"]
         ],
@@ -2059,6 +2066,203 @@ pares_lista = [
             "Rivalidades com uma pitada de vingança são hilárias! O humor ganha um toque picante. E qual outro gênero você gosta?"
         ]
     ],
+
+
+    # Nível 1: Tema principal - Aventura
+    [
+        r"(.*)aventura[s]?(.*)",
+        [
+            "Aventura é o chamado para o desconhecido! Você prefere histórias de exploração de terras selvagens ou buscas por tesouros lendários?"
+        ]
+    ],
+
+    # Nível 2: Subtemas de Aventura
+    [
+        r"(.*)explora[çc][ãa]o de terras selvagens(.*)|(.*)terras selvagens(.*)|(.*)explora[çc][õo]es(.*)",
+        [
+            "Explorar terras selvagens é pura emoção! Você gosta mais de aventuras em selvas inexploradas ou em desertos misteriosos?"
+        ]
+    ],
+    [
+        r"(.*)busca[s] por tesouro[s] lend[áa]rio[s](.*)|(.*)tesouro[s](.*)|(.*)lend[áa]rio[s](.*)",
+        [
+            "Buscar tesouros lendários é eletrizante! Você prefere caçadas em ruínas antigas ou expedições marítimas?"
+        ]
+    ],
+
+    # Nível 3: Detalhando os Subtemas
+    [
+        r"(.*)selva[s] inexplorada[s](.*)|(.*)selva[s](.*)|(.*)inexplorada[s](.*)",
+        [
+            "Selvas inexploradas escondem maravilhas! Você gosta mais de enfrentar perigos naturais ou de descobrir povos esquecidos?"
+        ]
+    ],
+    [
+        r"(.*)deserto[s] misterioso[s](.*)|(.*)deserto[s](.*)|(.*)misterioso[s](.*)",
+        [
+            "Desertos misteriosos são cheios de enigmas! Você prefere histórias de sobrevivência extrema ou de oásis secretos?"
+        ]
+    ],
+    [
+        r"(.*)ru[íi]na[s] antiga[s](.*)|(.*)ru[íi]na[s](.*)|(.*)antiga[s](.*)",
+        [
+            "Caçar tesouros em ruínas antigas é fascinante! Você gosta mais de decifrar armadilhas ou de desvendar profecias?"
+        ]
+    ],
+    [
+        r"(.*)expedi[çc][ãa]o maritime?(.*)|(.*)expedi[çc][õo]es(.*)|(.*)mar[íi]tima[s](.*)",
+        [
+            "Expedições marítimas são aventuras sem fim! Você prefere enfrentar tempestades ou piratas implacáveis?"
+        ]
+    ],
+
+    # Nível 4: Detalhando as Respostas do Nível 3
+    [
+        r"(.*)perigo[s] naturais(.*)|(.*)naturais(.*)|(.*)amea[çc]a[s] da natureza(.*)",
+        [
+            "Perigos naturais nas selvas testam os limites! Você acha mais emocionante escapar de animais selvagens ou superar terrenos traiçoeiros?"
+        ]
+    ],
+    [
+        r"(.*)povo[s] esquecido[s](.*)|(.*)esquecido[s](.*)|(.*)tribo[s](.*)",
+        [
+            "Descobrir povos esquecidos é uma surpresa única! Você prefere quando há alianças inesperadas ou conflitos culturais?"
+        ]
+    ],
+    [
+        r"(.*)sobreviv[eê]ncia extrema(.*)|(.*)extrema(.*)|(.*)sobreviver(.*)",
+        [
+            "Sobrevivência extrema no deserto é intensa! Você gosta mais quando é contra a sede ou contra ilusões do calor?"
+        ]
+    ],
+    [
+        r"(.*)o[áa]si[s] secreto[s](.*)|(.*)secreto[s](.*)|(.*)ref[úu]gio[s](.*)",
+        [
+            "Oásis secretos são joias no deserto! Você prefere quando guardam relíquias ou quando escondem perigos?"
+        ]
+    ],
+    [
+        r"(.*)decifrar armadilha[s](.*)|(.*)armadilha[s](.*)|(.*)enigma[s](.*)",
+        [
+            "Decifrar armadilhas em ruínas é pura adrenalina! Você gosta mais quando exigem inteligência ou coragem física?"
+        ]
+    ],
+    [
+        r"(.*)desvendar profecia[s](.*)|(.*)profecia[s](.*)|(.*)predi[çc][ãa]o(.*)",
+        [
+            "Desvendar profecias dá um toque místico! Você prefere quando guiam a jornada ou quando trazem maldições?"
+        ]
+    ],
+    [
+        r"(.*)tempestade[s](.*)|(.*)tormenta[s](.*)",
+        [
+            "Enfrentar tempestades no mar é épico! Você gosta mais quando testam a navegação ou quando unem a tripulação?"
+        ]
+    ],
+    [
+        r"(.*)pirata[s] implac[áa]vel(.*)|(.*)pirata[s](.*)|(.*)implac[áa]vei[s](.*)",
+        [
+            "Piratas implacáveis são adversários formidáveis! Você prefere duelos no convés ou negociações arriscadas?"
+        ]
+    ],
+
+    # Nível 5: Finalizando com Comentários e Pergunta sobre Outro Gênero
+    [
+        r"(.*)animai[s] selvagem(.*)|(.*)selvagem(.*)|(.*)bicho[s](.*)",
+        [
+            "Escapar de animais selvagens é pura tensão! A aventura brilha com esses desafios da selva. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)terreno[s] trai[çc]oeiro[s](.*)|(.*)trai[çc]oeiro[s](.*)|(.*)perigo[s] do terreno(.*)",
+        [
+            "Superar terrenos traiçoeiros é um teste de resistência! A aventura ganha vida na selva. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)alian[çc]a[s] inesperada[s](.*)|(.*)inesperada[s](.*)|(.*)uni[ãa]o(.*)",
+        [
+            "Alianças inesperadas com povos esquecidos são incríveis! A aventura cresce com esses laços. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)conflito[s] cultural(.*)|(.*)cultural(.*)|(.*)choque[s](.*)",
+        [
+            "Conflitos culturais trazem riqueza à aventura! A história pulsa com essas diferenças. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)sede(.*)|(.*)falta de [áa]gua(.*)",
+        [
+            "Sobreviver à sede no deserto é um desafio brutal! A aventura captura essa luta. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)ilus[õo]es do calor(.*)|(.*)ilus[õo]es(.*)|(.*)miragem(.*)",
+        [
+            "Ilusões do calor transformam o deserto em um enigma! A aventura brilha com esses truques. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)rel[íi]quia[s](.*)|(.*)artefato[s](.*)",
+        [
+            "Oásis com relíquias são tesouros escondidos! A aventura ganha um brilho especial. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)esconde[m] perigo[s](.*)|(.*)perigo[s](.*)|(.*)amea[çc]a[s](.*)",
+        [
+            "Oásis que escondem perigos são surpreendentes! A aventura vive dessas reviravoltas. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)intelig[eê]ncia(.*)|(.*)racioc[íi]nio(.*)",
+        [
+            "Armadilhas que exigem inteligência são brilhantes! A aventura pulsa com esses desafios mentais. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)coragem f[íi]sica(.*)|(.*)f[íi]sica(.*)|(.*)for[çc]a(.*)",
+        [
+            "Armadilhas que exigem coragem física são intensas! A aventura ganha com essa bravura. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)guia[m] a jornada(.*)|(.*)guia[r](.*)|(.*)caminho(.*)",
+        [
+            "Profecias que guiam a jornada são mágicas! A aventura fica mais profunda assim. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)traze[m] maldi[çc][õo]es(.*)|(.*)maldi[çc][õo]es(.*)|(.*)maldita(.*)",
+        [
+            "Profecias que trazem maldições são eletrizantes! A aventura ganha um toque sombrio. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)testa[m] a navega[çc][ãa]o(.*)|(.*)navega[çc][ãa]o(.*)|(.*)marinharia(.*)",
+        [
+            "Tempestades que testam a navegação são épicas! A aventura brilha no comando do leme. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)une[m] a tripula[çc][ãa]o(.*)|(.*)tripula[çc][ãa]o(.*)|(.*)uni[ãa]o(.*)",
+        [
+            "Tempestades que unem a tripulação são comoventes! A aventura cresce com esses laços. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)duelo[s] no conv[eé]s(.*)|(.*)conv[eé]s(.*)|(.*)luta[s](.*)",
+        [
+            "Duelos no convés contra piratas são vibrantes! A aventura pulsa com essas lutas. E qual outro gênero você gosta?"
+        ]
+    ],
+    [
+        r"(.*)negocia[çc][õo]es arriscada[s](.*)|(.*)arriscada[s](.*)|(.*)acordo[s](.*)",
+        [
+            "Negociações arriscadas com piratas são tensas! A aventura ganha com essa astúcia. E qual outro gênero você gosta?"
+        ]
+    ]
 
 
 ]
