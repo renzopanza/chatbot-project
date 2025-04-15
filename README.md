@@ -1,3 +1,11 @@
+Nome do projeto: ChatBook
+
+Nome dos integrantes do grupo:
+Renzo Faedda
+Gabriel Augusto 
+Wamberg Nascimento
+
+
 Documentação para rodar o porjeto Chat Bot:
 
 1 - Clone o repositório para o seu PC.
