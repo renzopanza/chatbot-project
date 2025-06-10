@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>ChatBook</title>
-    <link rel="stylesheet" href="{{ url_for('static/css', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="sidebar">
-        <img src="{{ url_for('static/images', filename='logo.png') }}" alt="Logo" class="logo-image">
-        <img src="{{ url_for('static/images', filename='menu.png') }}" alt="Menu" class="menu-icon">
-        <img src="{{ url_for('static/images', filename='add-chat.png') }}" alt="Add Chat" class="add-chat-icon">
+        <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo" class="logo-image">
+        <img src="{{ url_for('static', filename='menu-png.jpg') }}" alt="Menu" class="menu-icon">
+        <img src="{{ url_for('static', filename='add-chat.png') }}" alt="Add Chat" class="add-chat-icon">
     </div>
     <div class="chat-container">
         <div class="header">ChatBook</div>
         {% if not historico %}
-            <div class="robot-icon"><img src="{{ url_for('static/images', filename='robot.png') }}" alt="Robot"></div>
+            <div class="robot-icon"><img src="{{ url_for('static', filename='robot.png') }}" alt="Robot"></div>
             <p>Olá! Sou o ChatBook, seu especialista em literatura. Como posso ajudar você hoje?</p>
         {% else %}
             <div id="chat-box">
@@ -29,7 +29,7 @@
     <div class="chat-input">
         <form method="post" action="/">
             <input type="text" name="message" placeholder="Digite sua mensagem...">
-            <button type="submit"><img src="{{ url_for('static/images', filename='send.png') }}" alt="Send" class="send-icon"></button>
+            <button type="submit"><img src="{{ url_for('static', filename='send.png') }}" alt="Send" class="send-icon"></button>
         </form>
     </div>
 </body>
