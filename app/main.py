@@ -82,11 +82,11 @@ def gerar_resposta(pergunta: str) -> str:
     
     return resposta
 
-if __name__ == "__main__":
-    while True:
-        user_input = input("\nUsuário: ")
-        if user_input.lower() in ["sair", "exit"]:
-            break
+# if __name__ == "__main__":
+#     while True:
+#         user_input = input("\nUsuário: ")
+#         if user_input.lower() in ["sair", "exit"]:
+#             break
             
-        response = gerar_resposta(user_input)
-        print(f"\nChatBook: {response}")
+#         response = gerar_resposta(user_input)
+#         print(f"\nChatBook: {response}")
