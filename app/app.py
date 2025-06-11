@@ -3,7 +3,7 @@ from main import gerar_resposta
 import os
 
 app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), '..', 'templates'))
-app.secret_key = "chatbook_secret"  # Necessário para uso da sessão
+app.secret_key = "chatbook_secret"
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -14,10 +14,8 @@ def index():
     if request.method == "POST":
         user_message = request.form["message"]
 
-        # Gera resposta usando o backend
         resposta_bot = gerar_resposta(user_message)
 
-        # Atualiza histórico na sessão
         historico = session["historico"]
         historico.append({"user": user_message, "bot": resposta_bot})
         session["historico"] = historico
